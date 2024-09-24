@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+html, body, div {
+  display: grid;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  perspective: 65em;
+  perspective-origin: 50% -25%;
+  background: currentcolor;
+  color: #212121;
+}
+
+.a3d {
+  --m: calc(.5*(var(--n) - 1));
+  place-self: center;
+  rotate: x 90deg;
+  transform-style: preserve-3d;
+}
+
+.lyr {
+  grid-area: 1/1;
+  translate: 0 0 calc((var(--i) - .5*var(--n))*min(.75rem, 50vh/var(--n)));
+  -webkit-text-stroke: 4px hotpink;
+  font: 900 20vmin anton, sans-serif;
+  text-transform: uppercase;
+  animation: r 4s cubic-bezier(0.68, -0.65, 0.32, 1.65) calc((var(--i)/var(--n) - 1)*4s) infinite;
+}
+
+@keyframes r {
+  to {
+    rotate: 1turn;
+  }
+}
